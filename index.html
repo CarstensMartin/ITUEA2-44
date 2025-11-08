@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriMate | Search</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="./NutriMate.png" />
+  </head>
+  <body>
+    <div class="phone" role="application" aria-label="NutriMate Search">
+      <header>
+        <a class="back" href="#" id="backBtn" aria-label="Go back">Back</a>
+        <div class="status">
+          <img src="NutriMate.png" alt="NutriMate" class="logo" />
+          <div class="battery" aria-label="Battery 40 percent">40%</div>
+        </div>
+      </header>
+
+      <main class="screen">
+        <div class="label">Search Recipes</div>
+
+        <div class="field">
+          <label class="sr" for="q">Search Recipes</label>
+          <input
+            id="q"
+            type="search"
+            placeholder="Type to search..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="label" id="suggestionsLabel">Suggestions</div>
+
+        <section
+          class="grid"
+          id="catGrid"
+          aria-label="Recipe categories"
+        ></section>
+
+        <section
+          class="grid hide"
+          id="resGrid"
+          aria-label="Category results (6 meals)"
+        ></section>
+      </main>
+
+      <nav aria-label="Primary">
+        <div class="navwrap">
+          <button class="navbtn" data-tab="home">Home</button>
+          <button class="navbtn" data-tab="analytics">Analytics</button>
+          <button class="navbtn active" data-tab="search">Search</button>
+          <button class="navbtn" data-tab="planner">Planner</button>
+        </div>
+      </nav>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+/* Page layout elements */
+:root {
+  --bg: #eee;
+  --card: #fff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --brand: #2563eb;
+  --maxw: 424px;
+  --tap: 48px;
+}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: #000;
+  color: var(--ink);
+  font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 10px;
+}
+input[type="search"] {
+  width: 100%;
+  min-height: var(--tap);
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  background: var(--card);
+  padding: 12px 14px;
+  font-size: 16px;
+}
+
+/* Body Classes */
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: var(--maxw);
+  height: 100vh;
+  max-height: 940px;
+  background: var(--bg);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+.back {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo {
+  height: 22px;
+  width: auto;
+}
+.battery {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  width: 56px;
+  height: 34px;
+  border-radius: 8px;
+  background: #d9f99d;
+  border: 2px solid #84cc16;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+.screen {
+  flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.label {
+  padding: 8px 16px 6px;
+  font-weight: 700;
+}
+.field {
+  padding: 0 16px 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 0 16px 16px;
+}
+.cat {
+  background: #f1f5f9;
+  border-radius: 12px;
+  border: 1.5px solid #e5e7eb;
+  position: relative;
+  cursor: pointer;
+  min-height: 140px;
+}
+.cat::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  background: linear-gradient(160deg, #e5e7eb 50%, transparent 0) no-repeat;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px #e5e7eb;
+}
+.cat::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  left: 24px;
+  top: 22px;
+  box-shadow: 0 0 0 2px #eef2f7 inset;
+}
+.cat .heading {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  font-weight: 800;
+  font-size: 18px;
+}
+.cat .tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.cat:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+.c-fav {
+  border-color: #fdba74 !important;
+  background: #fff7ed !important;
+}
+.c-fav .tag {
+  background: #fed7aa;
+  color: #7c2d12;
+}
+.c-post {
+  border-color: #93c5fd !important;
+  background: #e0f2fe !important;
+}
+.c-post .tag {
+  background: #bfdbfe;
+  color: #1e3a8a;
+}
+.c-lowcarb {
+  border-color: #67e8f9 !important;
+  background: #ecfeff !important;
+}
+.c-lowcarb .tag {
+  background: #a5f3fc;
+  color: #164e63;
+}
+.c-under20 {
+  border-color: #fde047 !important;
+  background: #fef9c3 !important;
+}
+.c-under20 .tag {
+  background: #fef08a;
+  color: #713f12;
+}
+.c-highprotein {
+  border-color: #a5b4fc !important;
+  background: #e4e7ff !important;
+}
+.c-highprotein .tag {
+  background: #c7d2fe;
+  color: #3730a3;
+}
+.c-gluten {
+  border-color: #86efac !important;
+  background: #dcfce7 !important;
+}
+.c-gluten .tag {
+  background: #bbf7d0;
+  color: #065f46;
+}
+.recipe {
+  background: #fff;
+  border-radius: 12px;
+  border: 1.5px solid #e5e7eb;
+  overflow: hidden;
+  min-height: 100px;
+  display: grid;
+  grid-template-rows: 84px auto;
+}
+.imgph {
+  background: linear-gradient(160deg, #e5e7eb 50%, transparent 0) no-repeat;
+}
+.body {
+  padding: 10px 12px;
+}
+.title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+.recTag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+.recTag.c-fav {
+  background: #fed7aa;
+  color: #7c2d12;
+}
+.recTag.c-post {
+  background: #bfdbfe;
+  color: #1e3a8a;
+}
+.recTag.c-lowcarb {
+  background: #a5f3fc;
+  color: #164e63;
+}
+.recTag.c-under20 {
+  background: #fef08a;
+  color: #713f12;
+}
+.recTag.c-highprotein {
+  background: #c7d2fe;
+  color: #3730a3;
+}
+.recTag.c-gluten {
+  background: #bbf7d0;
+  color: #065f46;
+}
+
+/* Navigation */
+nav {
+  background: var(--card);
+  border-top: 1.5px solid #e5e7eb;
+}
+.navwrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 12px;
+}
+.navbtn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #111827;
+  font-weight: 600;
+  min-height: var(--tap);
+  padding: 6px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.navbtn.active {
+  color: var(--brand);
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hide {
+  display: none;
+}
